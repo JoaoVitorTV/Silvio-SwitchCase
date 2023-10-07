@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade1 Notas</title>
+</head>
+
+<body>
+    <h1>Notas de um Aluno</h1>
+    <h2>
+        <p>Aluno:<span id="aluno"></span></p>
+    </h2>
+    <h2>
+        <p>Primeira Nota:<span id="N1"></span></p>
+    </h2>
+    <h2>
+        <p>Segunda Nota:<span id="N2"></span></p>
+    </h2>
+    <h2>
+        <p>Terceira Nota:<span id="N3"></span></p>
+    </h2>
+    <h2>
+        <p>Situação:<span id="situac"></span></p>
+    </h2>
+    <h2>
+        <p>Notas em ordem decrescente:<span id="decre"></span></p>
+    </h2>
+
+    <script>
+        let aluno = prompt("Digite o nome do Aluno");
+        let N1 = Number(prompt("Digite a primeira nota"));
+        let N2 = Number(prompt("Digite a segunda nota"));
+        let N3 = Number(prompt("Digite a terceira nota"));
+        let Ma;
+        let Mb;
+        let Mc;
+
+        let media = (N1 + N2 + N3) / 3
+        let Situação
+
+        switch (true) {
+            case N1 >= N2 && N2 > N3:
+                Ma = N1;
+                if (N2 > N3) {
+                    Mb = N2;
+                    Mc = N3;
+                } else {
+                    Mb = N3;
+                    Mc = N2;
+                }
+                break;
+            case N2 >= N1 && N1 > N3:
+                Ma = N2;
+                if (N1 > N3) {
+                    Mb = N1;
+                    Mc = N3;
+                } else {
+                    Mb = N3;
+                    Mc = N1;
+                }
+                break;
+            case N2 >= N3 && N3 > N1:
+                Ma = N2;
+                if (N3 > N1) {
+                    Mb = N3;
+                    Mc = N1;
+                } else {
+                    Mb = N1;
+                    Mc = N3;
+                }
+                break;
+            case N3 >= N2 && N2 > N1:
+                Ma = N3;
+                if (N2 > N1) {
+                    Mb = N2;
+                    Mc = N1;
+                } else {
+                    Mb = N1;
+                    Mc = N2;
+                }
+                break;
+            case N1 >= N3 && N3 > N2:
+                Ma = N1;
+                if (N3 > N2) {
+                    Mb = N3;
+                    Mc = N2;
+                } else {
+                    Mb = N2;
+                    Mc = N3;
+                }
+                break;
+            case N3 >= N1 && N1 > N2:
+                Ma = N3;
+                if (N1 > N2) {
+                    Mb = N1;
+                    Mc = N2;
+                } else {
+                    Mb = N2;
+                    Mc = N1;
+                }
+                break;
+            case N1 == N2 && N1 == N3:
+                Ma = N1;
+                Mb = N2;
+                Mc = N3;
+
+                break;
+
+            default:
+                Ma = 0
+                Mb = 0
+                Mc = 0
+        }
+
+
+        if (media >= 6) {
+            Situação = "Aprovado"
+        } else {
+            Situação = "Reprovado"
+        }
+
+        document.getElementById("aluno").innerHTML = aluno;
+        document.getElementById("N1").innerHTML = N1;
+        document.getElementById("N2").innerHTML = N2;
+        document.getElementById("N3").innerHTML = N3;
+        document.getElementById("situac").innerHTML = Situação;
+        document.getElementById("decre").innerHTML = Ma + "," + Mb + "," + Mc;
+
+    </script>
+
+
+
+</body>
+
+</html>

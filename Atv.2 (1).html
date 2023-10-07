@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Peso</title>
+</head>
+
+<body>
+
+    <h1>Pessoas e seus Pesos</h1>
+    <h2>
+        <p>Nome da Primeira Pessoa:<span id="pes1"></span></p>
+    </h2>
+    <h2>
+        <p>Peso da Primeira Pessoa:<span id="N1"></span></p>
+    </h2>
+    <h2>
+        <p>Nome da Segunda Pessoa:<span id="pes2"></span></p>
+    </h2>
+    <h2>
+        <p>Peso da Segunda Pessoa:<span id="N2"></span></p>
+    </h2>
+    <h2>
+        <p>Nome da Terceira Pessoa:<span id="pes3"></span></p>
+    </h2>
+    <h2>
+        <p>Peso da Terceira Pessoa:<span id="N3"></span></p>
+    </h2>
+    <h2>
+        <p>Pesos em ordem Decrescentes:<span id="decre"></span></p>
+    </h2>
+    
+
+    <script>
+
+        let pes1 = prompt("Digite o nome da Primeira Pessoa")
+        let N1 = Number(prompt("Digite o peso da Primeira Pessoa"))
+        let pes2 = prompt("Digite o nome da Segunda Pessoa")
+        let N2 = Number(prompt("Digite o peso da Segunda Pessoa"))
+        let pes3 = prompt("Digite o nome da Terceira Pessoa")
+        let N3 = Number(prompt("Digite o peso da Terceira Pessoa"))
+        let Ma;
+        let Mb;
+        let Mc;
+
+        switch (true) {
+            case N1 >= N2 && N2 > N3:
+                Ma = N1;
+                if (N2 > N3) {
+                    Mb = N2;
+                    Mc = N3;
+                } else {
+                    Mb = N3;
+                    Mc = N2;
+                }
+                break;
+            case N2 >= N1 && N1 > N3:
+                Ma = N2;
+                if (N1 > N3) {
+                    Mb = N1;
+                    Mc = N3;
+                } else {
+                    Mb = N3;
+                    Mc = N1;
+                }
+                break;
+            case N2 >= N3 && N3 > N1:
+                Ma = N2;
+                if (N3 > N1) {
+                    Mb = N3;
+                    Mc = N1;
+                } else {
+                    Mb = N1;
+                    Mc = N3;
+                }
+                break;
+            case N3 >= N2 && N2 > N1:
+                Ma = N3;
+                if (N2 > N1) {
+                    Mb = N2;
+                    Mc = N1;
+                } else {
+                    Mb = N1;
+                    Mc = N2;
+                }
+                break;
+            case N1 >= N3 && N3 > N2:
+                Ma = N1;
+                if (N3 > N2) {
+                    Mb = N3;
+                    Mc = N2;
+                } else {
+                    Mb = N2;
+                    Mc = N3;
+                }
+                break;
+            case N3 >= N1 && N1 > N2:
+                Ma = N3;
+                if (N1 > N2) {
+                    Mb = N1;
+                    Mc = N2;
+                } else {
+                    Mb = N2;
+                    Mc = N1;
+                }
+                break;
+            case N1 == N2 && N1 == N3:
+                Ma = N1;
+                Mb = N2;
+                Mc = N3;
+
+                break;
+
+            default:
+                Ma = 0
+                Mb = 0
+                Mc = 0
+        }
+
+        document.getElementById("pes1").innerHTML = pes1;
+        document.getElementById("pes2").innerHTML = pes2;
+        document.getElementById("pes3").innerHTML = pes3;
+        document.getElementById("N1").innerHTML = N1 + "Kg"
+        document.getElementById("N2").innerHTML = N2 + "Kg"
+        document.getElementById("N3").innerHTML = N3 + "Kg"
+        document.getElementById("decre").innerHTML = Ma + "Kg" + "," + Mb + "Kg" + "," + Mc + "Kg";
+        
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
